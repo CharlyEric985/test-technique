@@ -3,5 +3,5 @@ djangorestframework
 djangorestframework-simplejwt
 psycopg2-binary
 redis
-pytest
-pytest-django
+django-redis
+python-dotenv
