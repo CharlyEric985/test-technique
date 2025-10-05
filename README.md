@@ -1,45 +1,28 @@
-# Test Technique Backend & DevOps – API Articles
+# API CRUD Articles - Django REST Framework + JWT
 
 ## Description
 
-Cette API REST en Django permet de gérer des articles avec :
-
-- Authentification JWT
-- Permissions (Admin, Editor, Reader)
-- Cache Redis pour accélérer les requêtes sur la liste d'articles
-
----
-
-## Stack Technique
-
-- Backend : Django 4.x + Django REST Framework  
-- Base de données : PostgreSQL  
-- Cache : Redis  
-- Authentification : JWT (djangorestframework-simplejwt)  
-- Containerisation : Docker + docker-compose  
+Cette API permet de gérer des articles avec un système d’authentification JWT et une gestion des rôles :
+- Admin : peut créer, lire, mettre à jour et supprimer tous les articles.
+- Editor : peut créer, lire et modifier uniquement ses propres articles.
+- Reader : peut uniquement lire les articles.
 
 ---
 
-## Installation et configuration
+## Technologies utilisées
 
-1. Cloner le projet :
+- Django 5+
+- Django REST Framework
+- djangorestframework-simplejwt
+- PostgreSQL
+- Docker / Docker Compose
+- Pytest ou unittest
 
+---
+
+## Installation et exécution
+
+### 1. Cloner le projet
 ```bash
 git clone https://github.com/axian-group/test-technique
 cd test-technique
-
-Créer le fichier .env à partir de l'exemple :
-
-cp .env.example .env
-
-    Lancer Docker :
-
-sudo docker-compose up --build
-
-Appliquer les migrations :
-
-sudo docker-compose exec web python manage.py migrate
-
-Créer un superutilisateur pour accéder à l’admin Django :
-
-sudo docker-compose exec web python manage.py createsuperuser
